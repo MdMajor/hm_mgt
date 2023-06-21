@@ -32,7 +32,8 @@ Hotel Management Service
   - 
 
 
-## stock
+## stock!
+
 ## attendence
 ## payroll
 
@@ -41,3 +42,5 @@ Hotel Management Service
 ## Webserver - apache httpd, nginx, React
 ## Database - Postgres
 ## Spring Boot docker
+
+[ER_diagram](https://github.com/CrashTechIndia/hm_mgt/assets/52419744/6fba436f-a83e-4ec9-8a18-1b8455d8e4d8)
