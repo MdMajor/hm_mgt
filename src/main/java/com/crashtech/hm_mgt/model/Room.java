@@ -15,9 +15,6 @@ public class Room {
     @Column(name="price")
     private Integer price;
 
-    @ManyToOne
-    private Booking booking;
-
     public Room() {
     }
 

@@ -2,6 +2,7 @@ package com.crashtech.hm_mgt.controller;
 
 import com.crashtech.hm_mgt.dto.ReservationRequest;
 import com.crashtech.hm_mgt.model.Booking;
+import com.crashtech.hm_mgt.model.Customer;
 import com.crashtech.hm_mgt.model.Room;
 import com.crashtech.hm_mgt.repository.BookingRepository;
 import com.crashtech.hm_mgt.repository.CustomerRepository;
@@ -46,6 +47,32 @@ public class Controller {
     @GetMapping("/getRooms")
     public List<Room> getRooms(){
         return roomRepository.findAll();
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public Optional<?> deleteById(@PathVariable("id") int id){
+        if(bookingRepository.existsById(id)){
+            Optional<Booking> deletedBooking = bookingRepository.findById(id);
+            bookingRepository.deleteById(id);
+            return deletedBooking;
+        }
+        else{
+            return Optional.of("record does not exist");
+        }
+
+    }
+
+    @PutMapping("/edit/customer")
+    public Optional<?> updateCustomer(@RequestParam("name") String name, @RequestParam("id") int id){
+        if(customerRepository.existsById(id)) {
+            Optional<Customer> customer = customerRepository.findById(id);
+            customer.get().setName(name);
+            customerRepository.save(customer.get());
+            return Optional.of(customer);
+        }
+        else {
+            return Optional.of("customer does not exist");
+        }
     }
 
 }
