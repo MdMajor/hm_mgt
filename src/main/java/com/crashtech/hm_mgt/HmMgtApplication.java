@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class HmMgtApplication {
 
 	public static void main(String[] args) {
+		String PORT = System.getenv("PORT");
 		SpringApplication.run(HmMgtApplication.class, args);
 	}
 
