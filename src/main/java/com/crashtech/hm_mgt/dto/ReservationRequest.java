@@ -1,7 +1,6 @@
 package com.crashtech.hm_mgt.dto;
 
 import com.crashtech.hm_mgt.model.Booking;
-import com.crashtech.hm_mgt.model.Customer;
 
 public class ReservationRequest {
     private Booking booking;
